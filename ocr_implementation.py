@@ -67,5 +67,8 @@ for page in pdf_image:
     text = extract_text_from_image(preprocessed_image)
     extracted_text.append(text)
 
+
+# organizing the extracted text
+extracted_text = list(filter(None, list(map(lambda x: x.replace(' ', '') if x == ' ' else x, extracted_text[0].split('\n')))))
 print(extracted_text)
 
